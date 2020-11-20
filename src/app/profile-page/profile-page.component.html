@@ -1,0 +1,30 @@
+<div class="section">
+    <div class="container img-container" >
+      <form [formGroup]="myForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" 
+                class="form-control">
+                <div *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)" class="text-danger">
+                  <small *ngIf="myForm.controls['name'].errors.required">
+                    Name is required.
+                  </small>
+                 </div>
+           </div>
+        
+        <div class="form-group">
+            <label for="file">File</label>
+            <input 
+                formControlName="file"
+                id="file" 
+                type="file" 
+                class="form-control"
+                (change)="onFileChange($event)">
+         </div>
+        <img class="img-preview" [src]="imageSrc" *ngIf="imageSrc">
+        </form>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.container.img-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+    /* border: 1px solid grey; */
+}
+.img-preview{
+    height: 450px;
+    width: 450px;
+}
