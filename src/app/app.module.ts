@@ -8,7 +8,7 @@ import { FormdemoComponent } from './formdemo/formdemo.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 const routes: Routes = [
-  {path:"", redirectTo:"/signup", pathMatch:"full"},
+  { path: 'home', component:AppComponent },
   { path: 'signup', component:FormdemoComponent },
   { path: 'profile', component: ProfilePageComponent },
 ];
