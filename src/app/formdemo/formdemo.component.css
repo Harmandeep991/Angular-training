@@ -1,0 +1,36 @@
+body, html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+  }
+.signup-form {
+    margin: 0 30%;
+    width: 500px;    
+    margin-top: 20px;
+    display: flex;
+    flex:1;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.center-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit{
+    display: flex;
+    margin-right: 30px;
+}
+
+.submit > .btn-success {
+    margin-right: 20px;
+}

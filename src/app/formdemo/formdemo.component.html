@@ -1,0 +1,73 @@
+<div class="signup-form">
+   <form class="form-content" [formGroup]="signupForm" (ngSubmit)="submitForm()">
+
+     <div class="form-group">
+        <label class="center-block">Name:
+          <input class="form-control" formControlName="name" placeholder="John Doe">
+        </label>
+         <div *ngIf="signupForm.controls['name'].invalid && (signupForm.controls['name'].dirty || signupForm.controls['name'].touched)" class="text-danger">
+           <small *ngIf="signupForm.controls['name'].errors.required">
+             Name is required.
+           </small>
+          </div>
+      </div>
+      
+       <div class="form-group">
+         <label class="center-block">Email:
+          <input class="form-control" [class.is-invalid] ="Email.invalid && Email.touched" formControlName="email" placeholder="@abc.com">
+         </label>
+
+         <div *ngIf="(Email.invalid && Email.touched) || Email.dirty">
+           <small *ngIf="Email.errors?.required" class="text-danger">email is required</small>
+           <small *ngIf="Email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+          </div>
+       </div>
+      <div class="form-group">
+        <label class="center-block">Password:
+          <input class="form-control" type="password" formControlName="password" placeholder="password" minlength=8>
+        </label>
+       <div *ngIf="signupForm.controls['password'].invalid &&
+          (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)" 
+           class="text-danger">
+         <small *ngIf="signupForm.controls['password'].errors.required">Password is required.</small>
+         <small *ngIf="signupForm.controls['password'].errors.minlength">password must be at least 8 characters long.</small>
+        </div>
+       </div>
+     
+       <div class="form-group">
+        <label class="center-block">Country:
+          <input class="form-control" formControlName="country" placeholder="Nz" required>
+        </label>
+         <div *ngIf="signupForm.controls['country'].invalid &&
+           (signupForm.controls['country'].dirty || signupForm.controls['country'].touched)" 
+            class="text-danger">
+           <small *ngIf="signupForm.controls['country'].errors.required">Country is required.</small>
+          </div>
+       </div>
+       <div class="form-group">
+        <label class="center-block">State:
+          <input class="form-control" formControlName="state" placeholder="Ak" required>
+        </label>
+         <div *ngIf="signupForm.controls['state'].invalid &&
+         (signupForm.controls['state'].dirty || signupForm.controls['state'].touched)" 
+          class="text-danger">
+         <small *ngIf="signupForm.controls['state'].errors.required">State is required.</small>
+       </div>
+       </div>
+       <div class="form-group">
+         <label class="center-block">City:
+           <input class="form-control" formControlName="city" placeholder="Mount beton" required>
+         </label>
+        <div *ngIf="signupForm.controls['city'].invalid &&
+          (signupForm.controls['city'].dirty || signupForm.controls['city'].touched)" 
+           class="text-danger">
+          <small *ngIf="signupForm.controls['city'].errors.required">City is required.</small>
+         </div>
+       </div>
+       <div class="submit">
+        <button  class="btn btn-lg btn-success pull-xs-right" type="submit">Submit</button>
+        <button type="reset" class="btn btn-lg btn-primary pull-xs-right"(click)="resetValues()">Reset</button>
+       </div>
+      
+    </form>
+</div>
